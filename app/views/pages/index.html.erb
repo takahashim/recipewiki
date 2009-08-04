@@ -3,13 +3,13 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Content</th>
+    <th>Path</th>
   </tr>
 
 <% @pages.each do |page| %>
   <tr>
     <td><%=h page.title %></td>
-    <td><%=h page.content %></td>
+    <td>/<%=h page.path %></td>
     <td><%= link_to 'Show', page %></td>
     <td><%= link_to 'Edit', edit_page_path(page) %></td>
     <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>

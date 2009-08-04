@@ -13,12 +13,11 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.xml
   def show
+    require 'hikidoc'
     @page = Page.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @page }
-    end
+    @title = @page.title
+    @content = HikiDoc.to_html(@page.content)
   end
 
   # GET /pages/new
