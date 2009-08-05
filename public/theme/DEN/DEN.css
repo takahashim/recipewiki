@@ -1,0 +1,427 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+* html html {
+    width:100%; 
+    margin:0;
+    overflow:auto;
+}
+
+* html body {
+    width:100%;
+    margin:0;
+    height:100%;
+    overflow:auto;
+}
+
+body{
+    font-family:"¥Ò¥é¥®¥Î³Ñ¥´ Pro W3", Verdana;
+    text-align:center;
+    background:#fbfbf1;
+    color:#333;
+}
+
+a{
+    color:#00497f;
+}
+
+a:hover {
+    color:#000;
+}
+
+ul,ol,li{
+    list-style:none;
+}
+
+
+
+#simple-header{
+    background:#575744;
+}
+
+#simple-header a{
+    font-size:80%;
+}
+
+h1{
+    width:755px;
+    text-align:left;
+    font-size:90%;
+    margin:60px auto 40px;
+    _padding:60px 0 40px;   /* for IE */  
+    _margin:0 auto; /* for IE */  
+}
+
+h1 a{
+    background:#363623;
+    padding:5px 8px;
+    margin-left:20px;
+    color:#fff;
+}
+
+h1 a img{
+    background:none;
+}
+
+h1 a:hover {
+    background:#000;
+    color:#fff;
+}
+
+.hatena-body{
+    width:755px;
+    text-align:left;
+    margin:0 auto;
+}
+
+
+
+/* main */  
+
+.main{
+    width:510px;
+    float:left;
+    background:url("20071118193805.jpg") repeat-y;
+    margin:0 0 40px;
+}
+
+#pager-top{
+    font-size:80%;
+    background:url("20071118193806.jpg") no-repeat;
+    padding:15px 20px 10;
+}
+
+#days {
+    width:510px;
+    background:url("20071118193805.jpg") repeat-y;
+}
+
+.main #days {
+    width:auto;
+    background: transparent;
+}
+
+.day{
+    padding:1px 2px 20px;
+}
+
+.photo{
+    float:right;
+    margin:74px 10px 10px 10px;
+}
+
+h2{
+    font-size:80%;
+    font-weight:normal;
+    background:#575744;
+    padding:3px 18px;
+    color:#fff;
+}
+
+h2 a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.date{
+    font-family:Georgia;
+    margin-right:0.5em;
+}
+
+.body{
+    margin:20px 18px;
+}
+
+.section{
+    margin:0 0 20px;
+}
+
+h3{
+    font-size:90%;
+    font-weight:normal;
+    border-left:5px solid #363623;
+    border-bottom:1px solid #ddd;
+    padding:5px 8px;
+    margin-bottom:15px;
+}
+
+h3 a{
+    font-family:"¥Ò¥é¥®¥Î´Ý¥´ Pro W4";
+    color:#222;
+    text-decoration:none;
+}
+
+.section p.sectionheader{
+    font-size:80%;
+    background:#f2f2e6;
+    text-align:left;
+    border-left:5px solid #8c8c7a;
+    padding:5px 5px 5px 8px;
+    margin:-15px 0 15px;/* h3 margin-bottom*/  
+    line-height:1;
+    _padding-top:6px;   /* for IE */  
+}
+
+.timestamp{
+    font-family:Georgia;
+}
+
+.section p{
+    font-size:80%;
+    line-height:2;
+    margin:0.5em 0;
+}
+
+.section ul,
+.section ol{
+    font-size:80%;
+    line-height:2;
+    margin:10px 0 10px 20px;
+}
+
+h4{
+    font-size:80%;
+    background:url("20071118212158.jpg") no-repeat left center;
+    padding-left:20px;
+    margin:15px 0 10px;
+}
+
+blockquote, pre{
+    _font-size:80%;
+    background:#fff;
+    border:1px solid #ddd;
+    padding:9px 19px;
+    _padding:10px 20px; /* for IE */
+    margin:10px 0;
+}
+
+cite{
+    font-size:80%;
+}
+
+pre{
+    font-size:80%;
+    font-family:Verdana;
+    background:#f2f2e6;
+}
+
+div.comment{
+    margin:10px 20px;
+}
+
+.caption{
+    font-size:80%;
+    margin:0 0 1em;
+}
+
+.commentshort{
+    font-size:80%;
+}
+
+.commentbody{
+    text-indent:1em;
+}
+
+div.refererlist{
+    margin:10px 20px;
+}
+
+div.refererlist li{
+    font-size:80%;
+}
+
+#pager-bottom{
+    font-size:80%;
+    background:url("20071119150421.jpg") no-repeat left bottom;
+    padding:15px 20px 25px;
+}
+
+
+
+
+/* asin */
+.hatena-asin-detail{
+    background:#fff;
+    border:1px solid #ddd;
+    padding:9px 19px;
+    _padding:10px 20px 20px;    /* for IE */
+    margin:10px 0;
+}
+
+.hatena-asin-detail img{
+    margin-right:20px;
+}
+
+.hatena-asin-detail-image{
+    float:left;
+}
+
+
+/* sidebar */  
+
+.sidebar{
+    width:230px;
+    float:right;
+}
+
+#shadow{
+    margin:0 5px;
+}
+
+.hatena-module{
+    font-size:80%;
+    background:url("20071118212159.jpg") repeat-y;
+}
+
+.hatena-moduletitle{
+    background:url("20071118213102.gif") no-repeat;
+    color:#fff;
+    padding:7px 15px 5px 20px;
+}
+
+.hatena-moduletitle a{
+    color: #fff;
+}
+
+.hatena-modulebody{
+    padding:10px 15px 20px 20px;
+    margin:0 0 10px;
+    background:url("20071119112015.jpg") no-repeat bottom;
+}
+
+.hatena-modulebody p{
+    line-height:2;
+}
+
+.hatena-modulebody li{
+    color:#777;
+    border-bottom:1px dotted #ddd;
+    line-height:2;
+}
+
+.hatena-modulebody li a{
+    display:block;
+    text-decoration:none;
+    height:2em;
+    overflow:hidden;
+    _padding-top:1px;   /* for IE */  
+}
+
+.hatena-modulebody li a:hover{
+    background:#f2f2e6;
+    color:#000;
+}
+
+table.calendar{
+    font-size:80%;
+    width:190px;
+    border-collapse:collapse;
+    border:1px solid #ddd;
+}
+
+table.calendar td{
+    line-height:2;
+    text-align:center;
+    border:1px solid #ddd;
+}
+
+table.calendar td a{
+    display:block;
+    background:#f2f2e6;
+    text-decoration:none;
+}
+table.calendar td a img {
+  width: 16px;
+}
+
+table.calendar td a:hover{
+    background:#333;
+    color:#fff;
+}
+
+.calendar-sunday,
+.calendar-saturday{
+    background:#363623;
+    color:#fff;
+}
+
+.calendar-weekday{
+    background:#575744;
+    color:#fff;
+}
+
+
+
+
+
+/* archive */  
+
+#hatena-archive,
+#hatena-archive #pager-top,
+#hatena-archive #pager-bottom{
+    background:none;
+}
+
+div.calendar{
+    font-size:80%;
+}
+
+
+/* about */
+
+#hatena-about .photo{
+    float:none;
+    margin:0 0 20px;
+}
+
+
+
+
+
+/* clearfix */  
+.hatena-body:after,
+.hatena-asin-detail:after {
+    height:0;
+    visibility:hidden;
+    content:".";
+    display:block;
+    clear:both;
+}
+
+
+
+
+
+/* message */
+.message {
+    font-size:80%;
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:350px;
+    z-index:1000;
+ }
+
+* html .message{
+    position:fixed!important;
+    position:absolute;
+    top:60px;
+    right:40px;
+}
+
+/* adsense */          
+
+.google_color_text { color:#333333; }
+.google_color_link { color:#00497f; }
+.google_color_url { color:#333333; }
+.google_color_bg { color:#fbfbf1; }
+.google_color_border { color:#fbfbf1; }
+
+
+/* maxwidth */
+
+div.section img.hatena-fotolife {
+  max-width:470px;
+}
