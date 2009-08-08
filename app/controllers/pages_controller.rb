@@ -14,16 +14,45 @@ class PagesController < ApplicationController
   # GET /pages/1.xml
   def show
     require 'hikidoc'
-    @page = Page.find(params[:id])
+    if params[:path]
+      @page = Page.find_by_path(params[:path])
+    else
+      @page = Page.find(params[:id])
+    end
 
+    if !@page
+      redirect_to new_page_path(params)
+      return
+    end
+    
     @title = @page.title
     @content = HikiDoc.to_html(@page.content)
   end
 
+
+  def source
+    if params[:path]
+      @page = Page.find_by_path(params[:path])
+    else
+      @page = Page.find(params[:id])
+    end
+
+    if !@page
+      redirect_to new_page_path(params)
+      return
+    end
+    
+    content = @page.content
+    response.headers['Content-type'] = 'text/plain; charset=utf-8'
+    render :text => content
+  end
+
+
   # GET /pages/new
   # GET /pages/new.xml
   def new
-    @page = Page.new
+    title = params[:title] || params[:path]
+    @page = Page.new(:title => title, :path=>params[:path])
 
     respond_to do |format|
       format.html # new.html.erb
