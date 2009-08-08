@@ -1,22 +1,37 @@
-<h1>Listing pages</h1>
+<h1>ページ一覧</h1>
+
+<div class="hatena-body">
+<div class="main">
+
+<div id="days">
+<div class="day">
+<div class="body">
+<div class="section">
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Path</th>
+    <th>ページ名</th>
+    <th>最終更新時刻</th>
   </tr>
 
 <% @pages.each do |page| %>
   <tr>
-    <td><%=h page.title %></td>
-    <td>/<%=h page.path %></td>
-    <td><%= link_to 'Show', page %></td>
-    <td><%= link_to 'Edit', edit_page_path(page) %></td>
-    <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=link_to h(page.title), show_page_path(page.path) %></td>
+    <td><%=h page.updated_at %></td>
+<!--    <td><%= link_to 'Edit', edit_page_path(page) %></td> -->
   </tr>
 <% end %>
 </table>
 
-<br />
+</div>
 
+<!--
 <%= link_to 'New page', new_page_path %>
+-->
+</div>
+</div>
+</div>
+
+<div class="calendar" id="pager-bottom">
+</div>
+</div>

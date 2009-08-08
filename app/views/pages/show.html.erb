@@ -1,8 +1,23 @@
-<h2><%=h @title %></h2>
+<h1><%=h @title %></h1>
 
-<div>
+<div class="hatena-body">
+<div class="main">
+
+<div id="days">
+<div class="day">
+<div class="body">
+<div class="section">
   <%= @content %>
 </div>
 
 <%= link_to 'Edit', edit_page_path(@page) %> |
 <%= link_to 'Back', pages_path %>
+
+</div>
+</div>
+</div>
+
+<div class="calendar" id="pager-bottom">
+</div>
+</div>
+

@@ -1,4 +1,12 @@
-<h1>Editing page</h1>
+<h1><%=h @title %>ページの編集</h1>
+
+<div class="hatena-body">
+<div class="main">
+
+<div id="days">
+<div class="day">
+<div class="body">
+<div class="section">
 
 <% form_for(@page) do |f| %>
   <%= f.error_messages %>
@@ -19,6 +27,16 @@
     <%= f.submit 'Update' %>
   </p>
 <% end %>
+</div>
 
 <%= link_to 'Show', @page %> |
 <%= link_to 'Back', pages_path %>
+</div>
+</div>
+</div>
+
+<div class="calendar" id="pager-bottom">
+</div>
+</div>
+
+

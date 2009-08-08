@@ -1,17 +1,92 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+            "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Pages: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>RecipeWikiサンプル|<%= controller.action_name %></title>
+<link rel="stylesheet" href="/stylesheets/base.css" type="text/css" media="all">
+<link rel="stylesheet" href="/stylesheets/headerstyle_sp.css" type="text/css" media="all">
+<link rel="stylesheet" href="/theme/DEN/DEN.css" type="text/css" media="all">
+<!-- script type="text/javascript" src="http://s.hatena.ne.jp/js/HatenaStar.js"></script -->
 </head>
-<body>
+<body id="recipewiki">
 
 <p style="color: green"><%= flash[:notice] %></p>
 
+<div id="simple-header">
+<span><a href="/">ヘッダヘッダヘッダヘッダヘッダヘッダ</a></span>
+<ul class="menu">
+<% if @page && @page.title %>
+  <li><%= link_to '編集', edit_page_path(@page) %></li>
+  <li><%= link_to 'ソース', source_page_path(@page) %></li>
+<% end %>
+  <li><%= link_to '一覧', pages_path %></li>
+  <li><%= link_to '新規', new_page_path %></li>
+<!--
+  <li><a href="https://example.jp/logout">ログアウト</a></li>
+-->
+  <li><a href="/help">ヘルプ</a></li>
+</ul>
+</div>
+
 <%= yield %>
 
+<div class="sidebar">
+
+<div class="hatena-module">
+  <div class="hatena-moduletitle">このサイトについて</div>
+  <div class="hatena-modulebody">
+    <div class="hatena-profile">
+      <p class="hatena-profile-body">説明説明説明<br />説明説明説明</p>
+      <p class="hatena-profile-id"><a href="/about">→もっと詳しく</a></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="hatena-module">
+  <div class="hatena-moduletitle"><a href="http://d.hatena.ne.jp/hotkeyword">メニュー</a></div>
+  <div class="hatena-modulebody">
+    <ul class="hatena-hotkeyword">
+      <li><a href="">メニュー1</a></li>
+      <li><a href="">メニュー2</a></li>
+      <li><a href="">メニュー3</a></li>
+      <li><a href="">メニュー4</a></li>
+      <li><a href="">メニュー5</a></li>
+      <li><a href="">メニュー6</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="hatena-module">
+  <div class="hatena-moduletitle">最新タイトル</div>
+  <div class="hatena-modulebody">
+    <ul class="hatena-section">
+      <li><a href="">最新タイトル1</a> 2009-08-01 23:59:59</li>
+      <li><a href="">最新タイトル2</a> 2009-07-21 23:59:59</li>
+      <li><a href="">最新タイトル3</a> 2009-07-12 23:59:59</li>
+      <li><a href="">最新タイトル4</a> 2009-06-01 23:59:59</li>
+      <li><a href="">最新タイトル5</a> 2009-04-01 23:59:59</li>
+      <li><a href="">最新タイトル1</a> 2009-08-01 23:59:59</li>
+      <li><a href="">最新タイトル2</a> 2009-07-21 23:59:59</li>
+      <li><a href="">最新タイトル3</a> 2009-07-12 23:59:59</li>
+      <li><a href="">最新タイトル4</a> 2009-06-01 23:59:59</li>
+      <li><a href="">最新タイトル5</a> 2009-04-01 23:59:59</li>
+      <li><a href="">最新タイトル1</a> 2009-08-01 23:59:59</li>
+      <li><a href="">最新タイトル2</a> 2009-07-21 23:59:59</li>
+      <li><a href="">最新タイトル3</a> 2009-07-12 23:59:59</li>
+      <li><a href="">最新タイトル4</a> 2009-06-01 23:59:59</li>
+      <li><a href="">最新タイトル5</a> 2009-04-01 23:59:59</li>
+    </ul>
+  </div>
+</div>
+
+
+</div>
+
+</div>
 </body>
 </html>
