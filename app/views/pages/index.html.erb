@@ -9,16 +9,11 @@
 <div class="section">
 
 <table>
-  <tr>
-    <th>ページ名</th>
-    <th>最終更新時刻</th>
-  </tr>
 
 <% @pages.each do |page| %>
   <tr>
-    <td><%=link_to h(page.title), show_page_path(page.path) %></td>
-    <td><%=h page.updated_at %></td>
-<!--    <td><%= link_to 'Edit', edit_page_path(page) %></td> -->
+    <th><%=link_to h(page.title), show_page_path(page.path) %></th>
+    <td>(<%=h page.updated_at %> 更新)</td>
   </tr>
 <% end %>
 </table>
