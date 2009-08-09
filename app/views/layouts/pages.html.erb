@@ -13,12 +13,10 @@
 </head>
 <body id="recipewiki">
 
-<p style="color: green"><%= flash[:notice] %></p>
-
 <div id="simple-header">
 <span><a href="/">ヘッダヘッダヘッダヘッダヘッダヘッダ</a></span>
 <ul class="menu">
-<% if @page && @page.title %>
+<% if @page && @page.title && @page.id %>
   <li><%= link_to '編集', edit_page_path(@page) %></li>
   <li><%= link_to 'ソース', source_page_path(@page) %></li>
 <% end %>
@@ -32,6 +30,8 @@
   <li><a href="/help">ヘルプ</a></li>
 </ul>
 </div>
+
+<p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield %>
 
