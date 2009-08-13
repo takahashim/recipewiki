@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.xml
   def index
-    @pages = Page.all
+    @pages = Page.find(:all, :order=>'updated_at desc', :limit => 100)
 
     respond_to do |format|
       format.html # index.html.erb
