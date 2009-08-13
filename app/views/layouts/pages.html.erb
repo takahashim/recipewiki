@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <meta http-equiv="Content-Script-Type" content="text/javascript">
-<title>RecipeWikiサンプル|<%= controller.action_name %></title>
+<title><%= @page.title  if @page && @page.title  %>|<%=h WIKI_NAME%></title>
 <link rel="stylesheet" href="/stylesheets/base.css" type="text/css" media="all">
 <link rel="stylesheet" href="/stylesheets/headerstyle_sp.css" type="text/css" media="all">
 <link rel="stylesheet" href="/theme/DEN/DEN.css" type="text/css" media="all">
@@ -14,12 +14,13 @@
 <body id="recipewiki">
 
 <div id="simple-header">
-<span><a href="/">ヘッダヘッダヘッダヘッダヘッダヘッダ</a></span>
+<span><a href="/"><%=h WIKI_NAME%></a></span>
 <ul class="menu">
 <% if @page && @page.title && @page.id %>
   <li><%= link_to '編集', edit_page_path(@page) %></li>
   <li><%= link_to 'ソース', source_page_path(@page) %></li>
 <% end %>
+  <li><%= link_to 'トップ', root_path %></li>
   <li><%= link_to '一覧', pages_path %></li>
 <!--
   <li><%= link_to '新規', new_page_path %></li>
