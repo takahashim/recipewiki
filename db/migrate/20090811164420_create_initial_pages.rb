@@ -8,9 +8,13 @@ class CreateInitialPages < ActiveRecord::Migration
                      :path => 'menu',
                      :content => "*[[about]]\n*[[menu]]")
     page2.save
+    page3 = Page.new(:title => 'トップページ',
+                    :path => 'top',
+                    :content => "!!Wikiへようこそ\n(ここがサイトの表紙になります)")
+    page3.save
   end
 
   def self.down
-    Page.delete_all(["path=? or path=?", 'about', 'menu'])
+    Page.delete_all(["path=? or path=? or path=?", 'about', 'menu', 'top'])
   end
 end
