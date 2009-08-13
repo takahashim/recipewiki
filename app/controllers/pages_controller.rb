@@ -17,11 +17,7 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.xml
   def show
-    if params[:path]
-      @page = Page.find_by_path(params[:path])
-    else
-      @page = Page.find(params[:id])
-    end
+    @page = Page.find_by_path(params[:path])
 
     if !@page
       redirect_to new_page_path(params)
