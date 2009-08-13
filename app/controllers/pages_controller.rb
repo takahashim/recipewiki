@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+
+  before_filter :load_side_info
+
   # GET /pages
   # GET /pages.xml
   def index
@@ -109,5 +112,13 @@ class PagesController < ApplicationController
       format.html { redirect_to(pages_url) }
       format.xml  { head :ok }
     end
+  end
+
+  private
+  def load_side_info
+    menu = Page.find_by_path('menu')
+    @menu = HikiDoc.to_html(menu.content)
+    about = Page.find_by_path('about')
+    @about = HikiDoc.to_html(about.content)
   end
 end
