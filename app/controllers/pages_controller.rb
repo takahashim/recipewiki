@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
 
+  require 'hikidoc'
   before_filter :load_side_info
 
   # GET /pages
@@ -16,7 +17,6 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.xml
   def show
-    require 'hikidoc'
     if params[:path]
       @page = Page.find_by_path(params[:path])
     else
