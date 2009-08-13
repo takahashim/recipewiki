@@ -120,5 +120,7 @@ class PagesController < ApplicationController
     @menu = HikiDoc.to_html(menu.content)
     about = Page.find_by_path('about')
     @about = HikiDoc.to_html(about.content)
+    update_list = Page.find(:all, :order=>'updated_at desc', :limit => 10)
+    @update_list = update_list.collect{|l| "<li><a href=\"#{show_page_path(l.path)}\">#{l.title}</a> #{l.updated_at}</li>\n"}.to_s
   end
 end
