@@ -57,7 +57,12 @@ class PagesController < ApplicationController
 
   # GET /pages/1/edit
   def edit
-    @page = Page.find(params[:id])
+    @page = Page.find_by_path(params[:path])
+    if !@page
+      redirect_to new_page_path(params)
+      return
+    end
+
   end
 
   # POST /pages

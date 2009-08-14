@@ -17,7 +17,7 @@
 <span><a href="/"><%=h WIKI_NAME%></a></span>
 <ul class="menu">
 <% if @page && @page.title && @page.id %>
-  <li><%= link_to '編集', edit_page_path(@page) %></li>
+  <li><%= link_to '編集', edit_page_path(@page.path) %></li>
   <li><%= link_to 'ソース', source_page_path(@page.path) %></li>
 <% end %>
   <li><%= link_to 'トップ', root_path %></li>

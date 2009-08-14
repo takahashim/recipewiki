@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.show_page 'page/:path', :controller => 'pages', :action=>'show'
   map.source_page 'page/:path/source', :controller => 'pages', :action=>'source'
+  map.edit_page 'page/:path/edit', :controller => 'pages', :action=>'edit'
 
   map.resources :pages
 
