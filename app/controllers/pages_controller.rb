@@ -30,11 +30,7 @@ class PagesController < ApplicationController
 
 
   def source
-    if params[:path]
-      @page = Page.find_by_path(params[:path])
-    else
-      @page = Page.find(params[:id])
-    end
+    @page = Page.find_by_path(params[:path])
 
     if !@page
       redirect_to new_page_path(params)
