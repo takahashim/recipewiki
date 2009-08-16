@@ -4,18 +4,11 @@ class PagesController < ApplicationController
   before_filter :load_side_info
 
   # GET /pages
-  # GET /pages.xml
   def index
     @pages = Page.find(:all, :order=>'updated_at desc', :limit => 100)
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @pages }
-    end
   end
 
   # GET /pages/1
-  # GET /pages/1.xml
   def show
     @page = Page.find_by_path(params[:path])
 
@@ -27,7 +20,6 @@ class PagesController < ApplicationController
     @title = @page.title
     @content = HikiDoc.to_html(@page.content)
   end
-
 
   def source
     @page = Page.find_by_path(params[:path])
@@ -42,18 +34,12 @@ class PagesController < ApplicationController
     render :text => content
   end
 
-
   # GET /pages/new
-  # GET /pages/new.xml
   def new
     title = params[:title] || params[:path]
     @page = Page.new(:title => title, :path=>params[:path])
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @page }
-    end
   end
+
 
   # GET /pages/1/edit
   def edit
@@ -62,7 +48,6 @@ class PagesController < ApplicationController
       redirect_to new_page_path(params)
       return
     end
-
   end
 
   # POST /pages
