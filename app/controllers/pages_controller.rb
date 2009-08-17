@@ -46,41 +46,30 @@ class PagesController < ApplicationController
     @page = Page.find_by_path(params[:path])
     if !@page
       redirect_to new_page_path(params)
-      return
     end
   end
 
   # POST /pages
-  # POST /pages.xml
   def create
     @page = Page.new(params[:page])
 
-    respond_to do |format|
-      if @page.save
-        flash[:notice] = 'Page was successfully created.'
-        format.html { redirect_to show_page_path(@page.path) }
-        format.xml  { render :xml => @page, :status => :created, :location => @page }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @page.errors, :status => :unprocessable_entity }
-      end
+    if @page.save
+      flash[:notice] = 'Page was successfully created.'
+      redirect_to show_page_path(@page.path)
+    else
+      render :action => "new"
     end
   end
 
   # PUT /pages/1
-  # PUT /pages/1.xml
   def update
     @page = Page.find(params[:id])
 
-    respond_to do |format|
-      if @page.update_attributes(params[:page])
-        flash[:notice] = 'Page was successfully updated.'
-        format.html { redirect_to(show_page_path(@page.path)) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @page.errors, :status => :unprocessable_entity }
-      end
+    if @page.update_attributes(params[:page])
+      flash[:notice] = 'Page was successfully updated.'
+      redirect_to show_page_path(@page.path)
+    else
+      render :action => "edit"
     end
   end
 
