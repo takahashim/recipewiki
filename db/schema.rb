@@ -9,13 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090817063643) do
+ActiveRecord::Schema.define(:version => 20090820161152) do
 
   create_table "old_pages", :force => true do |t|
     t.integer  "page_id"
-    t.string   "title"
-    t.string   "path"
-    t.text     "content"
+    t.string   "page_title"
+    t.string   "page_path"
+    t.text     "page_content"
     t.datetime "page_created_at"
     t.datetime "page_updated_at"
     t.datetime "created_at"
