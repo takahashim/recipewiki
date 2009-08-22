@@ -3,6 +3,8 @@ class Page < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :content
 
+  attr_accessor :password
+
   def before_save
     logger.info 'hoge'
     old_page = OldPage.new

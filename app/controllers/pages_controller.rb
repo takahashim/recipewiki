@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 
   require 'hikidoc'
   before_filter :load_side_info
+  before_filter :need_password, :only => [:create, :update, :destroy]
 
   # GET /pages
   def index
@@ -86,6 +87,10 @@ class PagesController < ApplicationController
   end
 
   private
+  def need_password
+    render(:action => "error") if params[:page][:password] != WIKI_PASSWORD
+  end
+
   def load_side_info
     menu = Page.find_by_path('menu')
     @menu = HikiDoc.to_html(menu.content)

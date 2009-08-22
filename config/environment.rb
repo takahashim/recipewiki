@@ -42,3 +42,4 @@ Rails::Initializer.run do |config|
 end
 
 WIKI_NAME='Recipe Wiki'
+WIKI_PASSWORD='wikiwiki!'
